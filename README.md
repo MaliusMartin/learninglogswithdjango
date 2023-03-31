@@ -4,11 +4,11 @@ A learner can register, login create new topic add contents , access created top
 the project also can be found in the book of "python crash course" writen by Eric Matthes the project starts at 18th Topic
 
 #procedure
-fork the project
-clone the project
-run the command python manage.py runserver
-preview the project in your favourite browser link http://localhost:8000/
-Register and add new topic also contents
+1. fork the project
+2. clone the project
+3. run the command python manage.py runserver
+4. preview the project in your favourite browser link http://localhost:8000/
+5. Register and add new topic also contents
 
 
 you can modify the project and share you codes
