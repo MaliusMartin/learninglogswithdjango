@@ -1,0 +1,18 @@
+{% extends 'core/base.html' %}
+
+{% block content %}
+
+<p>  <a href="{% url 'core:topic' topic.id %}">{{topic}}</a></p>
+
+<p> Add a new content</p>
+<form action="{% url 'core:newentry' topic.id %}" method='post'>
+    {% csrf_token %}
+    {{form.as_p}}
+
+    <button name='submit'>Add Content</button>
+</form>
+
+{% endblock content %}
+
+
+

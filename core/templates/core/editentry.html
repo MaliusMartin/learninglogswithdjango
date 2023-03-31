@@ -1,0 +1,17 @@
+{% extends 'core/base.html' %}
+{% load bootstrap4 %}
+
+{% block content %}
+
+  <p> <a href="{% url  'core:topic' topic.id%}">{{topic}}</a></p>
+  <p>Edit Content:</p>
+
+  <form action= "{% url 'core:editentry' entry.id%}" method='post'>
+     {% csrf_token %}
+     {% comment %} {{form.as_p}} {% endcomment %}
+     {% bootstrap_form form%}
+     {% buttons%}
+     <button name="submit">Save Changes</button>{% endbuttons%}
+  </form>
+
+{% endblock content %}

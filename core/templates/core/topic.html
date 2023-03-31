@@ -1,0 +1,38 @@
+{% extends 'core/base.html' %}
+
+
+
+{% block page_header %}
+   <h3>Topic: {{topic}}</h3>
+
+{% endblock page_header %}
+   
+
+   {% comment %} <p> Entries:</p> {% endcomment %}
+   {% block content %}
+   <p>
+      <a href="{% url 'core:newentry' topic.id%}">Add new Content</a>
+   </p>
+
+   <ul>
+    {% for entry in entries  %}
+      <div class="card mb-3">
+         <h4 class="card-header">
+            <p>{{entry.headline}}</p>
+            <p>{{entry.date_added|date:'M d, Y H:i'}}</p>
+            <small>
+               <a href="{% url 'core:editentry'  entry.id %}">Edit content</a>
+            </small>
+         </h4>
+         <div class="card-body">
+           {{entry.text|linebreaks}} </div>
+        
+      </div>
+
+    {% empty %}
+       <li> There are no entries for this topic yet.</li>
+    
+    {% endfor %}
+   </ul>
+
+{% endblock content %}

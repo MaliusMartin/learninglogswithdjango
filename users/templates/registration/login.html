@@ -1,0 +1,27 @@
+{% extends 'core/base.html' %}
+
+{% load bootstrap4 %}
+
+{% block page_header %}
+ <h2> Log in to your account</h2>
+{% endblock page_header %}
+
+{% block content %}
+  {% comment %} {% if form.errors %}
+  
+     <p> Your password and username didn't match. Please try again</p>
+  {% endif %} {% endcomment %}
+
+  <form method='post' action="{% url 'users:login' %}" class="form">
+    {% csrf_token %}
+    {% comment %} {{form.as_p}} {% endcomment %}
+     {% bootstrap_form form%}
+     {% buttons%}
+        <button name="submit">Log in</button>{% endbuttons%}
+    <input  type="hidden", name="next" value="{% url 'core:index' %}"  />
+  </form>
+
+
+
+
+{% endblock content %}
