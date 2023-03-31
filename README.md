@@ -6,7 +6,7 @@ the project also can be found in the book of "python crash course" writen by Eri
 #procedure
 fork the project
 clone the project
-run the command <python manage.py runserver>
+run the command python manage.py runserver
 preview the project in your favourite browser link http://localhost:8000/
 Register and add new topic also contents
 
