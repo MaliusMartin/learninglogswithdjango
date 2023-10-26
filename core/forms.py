@@ -5,7 +5,7 @@ from .models import Topic, Entry
 class TopicForm(forms.ModelForm):
     
     class Meta:
-        model = Topic 
+        model = Topic
         fields = ['text']
         labels = {'text': ''}
 
@@ -13,8 +13,8 @@ class EntryForm(forms.ModelForm):
     
     class Meta:
         model = Entry
-        fields = ['headline','text' ]
+        fields = ['headline', 'text']
         labels = {'text': 'Entry:', 'headline': 'heading'}
         widgets = {'headline': forms.CharField(max_length=150, required=True)}
-        widgets = {'text': forms.Textarea(attrs={'cols':80})}
+        widgets = {'text': forms.Textarea(attrs={'cols': 80})}
        
