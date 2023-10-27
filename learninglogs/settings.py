@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-ozx4t4!dy5b04r+wn2bu%=!#1aqg^hfn3)tm!$tbybj1)0#pc)
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [ '.vercel.app','tottmsbackend.azurewebsites.net', '127.0.0.1']
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
