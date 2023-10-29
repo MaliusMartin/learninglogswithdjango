@@ -11,13 +11,13 @@ def index(request):
     
     return render(request, 'core/index.html')
 
-@login_required
+# @login_required
 def topics(request):
     topics = Topic.objects.filter(owner=request.user).order_by('date_added')
     context = {'topics':topics}
     return render(request, 'core/topics.html', context)
 
-@login_required
+# @login_required
 def topic(request, topic_id):
     topic = Topic.objects.get(id=topic_id)
     if topic.owner != request.user:
@@ -26,7 +26,7 @@ def topic(request, topic_id):
     context = {'topic': topic, 'entries': entries}
     return render(request, 'core/topic.html', context)
 
-@login_required
+# @login_required
 def newtopic(request):
     if request.method != 'POST':
         form = TopicForm()
@@ -42,7 +42,7 @@ def newtopic(request):
     context = {'form': form}
     return render(request, 'core/newtopic.html', context)
 
-@login_required
+# @login_required
 def newentry(request, topic_id):
     topic =Topic.objects.get(id=topic_id)
     
@@ -59,7 +59,7 @@ def newentry(request, topic_id):
         
     context = {'topic':topic, 'form':form}
     return render(request, 'core/newentry.html', context)
-@login_required
+# @login_required
 def editentry(request, entry_id):
     entry = Entry.objects.get(id=entry_id)
     topic = entry.topic
